@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   resources :posts
   devise_for :users
-  get 'home/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  get "home/index"
 
-  # Defines the root path route ("/")
-   root "home#index"
+  authenticated :users do
+    root 'post#index', as: :authenticate_root
+  end
+
+  devise_scope :users do
+    root "home#index"
+  end
+  
 end
