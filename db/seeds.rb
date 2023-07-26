@@ -8,6 +8,12 @@
 # db/seeds.rb
 
 # db/seeds.rb
+User.create!(
+    email: 'sandra14_lu@hotmail.com',
+    password: '123456',
+    role: 2
+  )
+
 require 'faker'
 
 10.times do
@@ -16,7 +22,8 @@ require 'faker'
 
   User.create!(
     email: email,
-    password: password
+    password: password,
+    role: rand(0..2)
   )
 end
 

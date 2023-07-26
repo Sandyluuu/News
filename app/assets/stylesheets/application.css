@@ -15,5 +15,13 @@
  */
 .image {
    width: 200px ;
-   
+   margin: 0 auto;
+   display:block;
+}
+
+#loguito {
+   width: 150px;
+   margin: 0 auto;
+   display:block;
+
 }
