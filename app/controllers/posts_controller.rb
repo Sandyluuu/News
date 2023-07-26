@@ -3,6 +3,13 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[:index, :show]
 
   # GET /posts or /posts.json
+  before_action only: [:new, :create] do
+    authorize_request(["author", "admin"])
+  end
+  before_action only: [:edit, :update, :destroy] do
+      authorize_request(["admin"])
+  end
+
   def index
     @posts = Post.all
   end

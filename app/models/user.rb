@@ -7,6 +7,8 @@ class User < ApplicationRecord
   
   has_many :posts
 
-  
+  enum :role, [:normal_user, :author, :admin]
+
+
       
 end
