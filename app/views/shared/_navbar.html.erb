@@ -1,9 +1,10 @@
  <nav>
   <ul>
-    <li><%= link_to 'Publica Aquí', new_post_path %></li>
   <% if user_signed_in? %>
     <p> HOLA! <%= current_user.email %> </p>
     <li><%= button_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to 'Publica Aquí', new_post_path %></li>
+     <li><%= link_to 'Editar Perfil', edit_user_registration_path %></li>
   <% else %>
     <li> 
       <%= link_to 'Inicia Sesión', new_user_session_path %> 
