@@ -8,8 +8,6 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2">
 
-
-        
         <li class="nav-item">
             <%= link_to 'Publica Aquí', new_post_path, class:'nav-link' %>        
         </li>
@@ -26,8 +24,9 @@
 
  <nav>
   <ul>
+    <% if user_signed_in? %>
     <p> HOLA! <strong><%= current_user.email %></strong> </p>
-    
+    <% end %>
 </ul>
 
 </nav>
